@@ -1,3 +1,5 @@
+import './css/styles.css';
+
 export const getItemPreviewTemplete = data => {
   return data
     .map(

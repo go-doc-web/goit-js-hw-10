@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-ul {
+.list {
   list-style: none;
   padding: 0;
 }
