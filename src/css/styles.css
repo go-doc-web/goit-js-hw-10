@@ -34,3 +34,22 @@ body {
 .country-name {
   font-size: 18px;
 }
+
+.header-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.country-name--one {
+  font-size: 30px;
+}
+
+.info-item {
+  font-weight: 700;
+}
+
+.info-item-text {
+  font-weight: 400;
+}
