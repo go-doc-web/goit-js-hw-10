@@ -9,9 +9,18 @@ export const getItemTemplete = data => {
       <ul class="info-list list">
         <li class="info-item">Capital: ${capital}</li>
         <li class="info-item">Population: ${population}</li>
-        <li class="info-item">Languages: ${languages}</li>
+        <li class="info-item">Languages: ${ReptileListItem(languages)}</li>
       </ul>
   `
     )
     .join('');
 };
+
+function ReptileListItem(array) {
+  let langs = [];
+  array.map(lang => {
+    langs.push(lang.name);
+    console.log(langs.join(','));
+    return langs.join(',');
+  });
+}
