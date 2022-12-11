@@ -26,14 +26,16 @@ const render = list => {
 };
 
 const handleInput = e => {
-  let name = e.target.value;
+  let name = e.target.value.trim();
   if (name === '') {
+    refs.countryInfo.innerHTML = '';
+    refs.countryList.innerHTML = '';
     return;
   }
   fetchCountriesByName(name)
     .then(data => {
       console.log(data);
-      let list;
+      let list = '';
       if (data.length > 10) {
         Notify.info(
           'Too many matches found. Please enter a more specific name.'
@@ -54,7 +56,7 @@ const handleInput = e => {
     .catch(err => {
       refs.countryInfo.innerHTML = '';
       refs.countryList.innerHTML = '';
-      Notify.failure('Qui timide rogat docet negare');
+      Notify.failure('Oops, there is no country with that name');
     });
 };
 
