@@ -28,8 +28,7 @@ const render = list => {
 const handleInput = e => {
   let name = e.target.value.trim();
   if (name === '') {
-    refs.countryInfo.innerHTML = '';
-    refs.countryList.innerHTML = '';
+    clearInfo();
     return;
   }
   fetchCountriesByName(name)
@@ -54,10 +53,14 @@ const handleInput = e => {
     })
 
     .catch(err => {
-      refs.countryInfo.innerHTML = '';
-      refs.countryList.innerHTML = '';
+      clearInfo();
       Notify.failure('Oops, there is no country with that name');
     });
 };
 
 refs.input.addEventListener('input', debounce(handleInput, DEBOUNCE_DELAY));
+
+function clearInfo() {
+  refs.countryInfo.innerHTML = '';
+  refs.countryList.innerHTML = '';
+}
